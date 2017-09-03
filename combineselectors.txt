@@ -1,0 +1,72 @@
+#COMBINE_SELECTORS 1.1 - Intro to combined CSS selectors
+#COMBINE_SELECTORS 1.2 - Combined Example explained
+#COMBINE_SELECTORS 1.3 - Spaces in selectors
+#COMBINE_SELECTORS 1.4 - Specificity Within Combined Selectors
+#COMBINE_SELECTORS 1.5 - Outro to combined CSS selectors
+
+
+
+#COMBINE_SELECTORS 1.1 - Intro to combined CSS selectors
+Hey Chris from Codify Academy here, in this video I want to explore how we can use combined CSS selectors to be more specific on what elements to style
+
+
+#COMBINE_SELECTORS 1.2 - Combined Example explained
+Lets say we have div with a class of food and we've styled all p tags inside of that with a background of gold.
+
+Then, lets say we want to update one element inside, the last p tag, we can add a class and use a combined selector to apply some style.
+
+In CSS the selector that's closest to the opening curly bracket is called the key. and this determines what elements the properties are applied to.
+
+Anything to the left is known as a pre qualifier and just helps identify the key elements to style.
+
+Looking at our first combined selector, .food space p, has two selectors in it, a class and a type selector.
+
+These two are separated by a space.
+
+The key selector is targeting all paragraph elements.
+
+And because there is a prequalifer class selector of food, the combined selector will only select paragraph elements that are nested within an element with a class attribute value of food.
+
+The second selector, .food space p.pizza, includes three selectors: two class selectors and one type selector.
+
+The only difference between the first and the second selector is the class selector of pizza was added to the end of the paragraph type selector.
+
+Because the new class selector, pizza, is right before the opening curly bracket,
+
+the class of pizza becomes the key selector here.
+
+
+#COMBINE_SELECTORS 1.3 - Spaces in selectors
+The use, or omission, of spaces with always make a difference in a CSS selector.
+that means the selector will only select paragraph elements with the class of pizza.
+
+If the paragraph type selector was removed, and the pizza class selector had spaces on both sides of it, it would select any element with the class of pizza, not just paragraphs.
+
+The best practice is to not prefix a class selector with a type selector. Generally we want to select any element with a given class, not just one type of element. And following this best practice, our new combined selector would be better as .food .pizza.
+
+it is targeting paragraphs with a class attribute value of pizza that reside within an element with the class attribute value of food.
+
+We can use different types of selectors to target any given element on a page.
+Before you practice more, let’s look at how combined selectors changes a selector’s specificity weight.
+
+
+
+#COMBINE_SELECTORS 1.4 - Specificity Within Combined Selectors
+When selectors are combined, the specificity weight will change and will be calculated by counting each different type of selector within any combined selector.
+
+Lets look are our first one, .food space p, it had both a class and a type selector.
+
+Knowing that the point value of a class selector is 0-1-0 and the point value of a type selector is 0-0-1, the total combined point value would be 0-1-1, found by adding up each kind of selector.
+
+The second selector, .food p.pizza, had two class selectors and one type selector. The combined weight is 0-2-1. The 0 in the first column is for zero ID selectors, the 2 in the second column is for two class selectors, and the 1 in the last column is for one type selector.
+
+When comparing the two selectors, the second selector, with its two classes, has a higher specificity weight and point value. Because of this it will take precedence in CSS.
+
+If we were to flip the order of these selectors, placing the higher-weighted selector above the lower-weighted selector, the appearance of their styles would not be affected due to each selector’s specificity weight.
+
+Remember the weight will only matter if there is are multiple selectors trying to apply similar properties to a element otherwise normal cascade law rules. those found last take precedence.
+
+
+
+#COMBINE_SELECTORS 1.5 - Outro to combined CSS selectors
+In general we want to keep an eye on the specificity of the selectors we use. The higher our specificity weights rise, the more likely our cascade is to break.

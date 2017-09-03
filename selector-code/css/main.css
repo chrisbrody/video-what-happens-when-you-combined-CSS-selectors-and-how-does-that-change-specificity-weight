@@ -1,0 +1,7 @@
+.food p {
+  background: gold;
+}
+
+.food p.pizza {
+  background: yellow;
+}
